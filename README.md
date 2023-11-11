@@ -3,7 +3,7 @@
 Signed distance functions + Rust (CPU & GPU) = ❤️❤️
 
 <p align="center">
-  <img height="512" src="_readme/v1.jpg" />
+  <img height="512" src="_readme/v2.jpg" />
 </p>
 
 Status: Work in progress.    
