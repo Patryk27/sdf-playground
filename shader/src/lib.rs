@@ -23,7 +23,7 @@ pub fn main_vs(
     };
 }
 
-/// Fragment shader, generates the actual screen color for each pixel.
+/// Fragment shader, generates color for each pixel on the screen.
 #[spirv(fragment)]
 pub fn main_fs(
     #[spirv(frag_coord)] pos: Vec4,
