@@ -1,0 +1,11 @@
+[package]
+name = "sdf-playground-shader"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["dylib"]
+
+[dependencies]
+sdf-playground-common = { path = "../common" }
+spirv-std = { git = "https://github.com/EmbarkStudios/rust-gpu" }

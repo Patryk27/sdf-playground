@@ -1,0 +1,15 @@
+[package]
+name = "sdf-playground"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+bytemuck = "1.14.0"
+env_logger = "0.10.0"
+log = "0.4.20"
+pixels = "0.13.0"
+sdf-playground-common = { path = "../common" }
+spirv-builder = { git = "https://github.com/EmbarkStudios/rust-gpu" }
+wgpu = { version = "*", features = ["spirv"] }
+winit = "0.28"
+winit_input_helper = "0.14"
