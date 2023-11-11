@@ -12,7 +12,7 @@ Platforms: Windows, Mac & Linux.
 ## About
 
 sdf-playground is a small demo showcasing how you can run Rust code on the GPU -
-it consists of two parts, both written in Rust:
+it consists of two parts:
 
 - the runner (run on the CPU, inside `./app`),
 - the shader (run on the GPU, inside `./shader`).
@@ -20,7 +20,7 @@ it consists of two parts, both written in Rust:
 Runner is responsible for spawning the window and telling GPU to execute the
 shader, while shader is the one which generates all the colors.
 
-The shader here implements a rudimentary renderer for signed distance functions,
+Shader here implements a rudimentary ray-marcher for signed distance functions,
 but in principle it can be anything you want, e.g.:
 
 ``` rust
@@ -46,10 +46,8 @@ $ cargo run --release
 
 Note that the code first builds the application, then starts it, and then builds
 the shader - so for a few moments (until the shader is ready), the window will
-be just pitch-black.
-
-(you should be able to see the shader's compilation progress in the terminal,
-though.)
+be just pitch-black (you should be able to see the shader's compilation progress
+in the terminal).
 
 On the upside, modifying the shader doesn't require restarting the application -
 simply change `shader/src/lib.rs`, save it and wait a few seconds for the
