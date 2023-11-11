@@ -23,7 +23,10 @@ pub fn main_vs(
     };
 }
 
-/// Fragment shader, generates color for each pixel on the screen.
+/// Fragment shader, generates color for each pixel on the screen¹.
+///
+/// ¹ technically for each pixel on the triangle, but since our triangle takes
+///   the entire screen...
 #[spirv(fragment)]
 pub fn main_fs(
     #[spirv(frag_coord)] pos: Vec4,
