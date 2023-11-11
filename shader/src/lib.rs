@@ -44,7 +44,7 @@ pub fn main_fs(
     // Where the camera is located
     let ray_origin = vec3(8.0, 4.0, 8.0);
 
-    // Where the camera is looking at
+    // Where the camera is looking towards
     let ray_direction =
         sdf_playground_common::direction(ray_origin, uv);
 
