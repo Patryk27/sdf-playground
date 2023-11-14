@@ -52,6 +52,16 @@ On the upside, modifying the shader doesn't require restarting the application -
 simply change `shader/src/lib.rs`, save it and wait a few seconds for the
 application to refresh!
 
+## Caveat Emptor
+
+rust-gpu (the software that compiles your Rust code into a shader) doesn't 
+support all features of the Rust language:
+
+- understandably, there's no standard library (no `std::fs`, no `vec![]` etc.),
+- there's no support for ADTs (no `enum Option<T> { Some(T), None }` etc.),
+- stick to `bool`, `u8`, `u32` and `f32` - other types (might) not work,
+- miscompilations are possible, though unlikely.
+
 ## License
 
 MIT License
