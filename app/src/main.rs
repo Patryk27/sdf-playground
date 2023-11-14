@@ -3,6 +3,7 @@ mod renderer;
 
 use self::compiler::*;
 use self::renderer::*;
+use log::*;
 use pixels::{Pixels, SurfaceTexture};
 use sdf_playground_common::Params;
 use std::mem;
@@ -105,6 +106,8 @@ fn main() {
             if let Some(window_size) =
                 input.window_resized()
             {
+                info!("Window resized: {window_size:?}");
+
                 params.width = window_size.width;
                 params.height = window_size.height;
 
