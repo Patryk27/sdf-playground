@@ -12,7 +12,7 @@ use spirv_std::spirv;
 /// coordinates.
 fn scene(time: f32, point: Vec3) -> f32 {
     /// Choose which scene to show:
-    const SCENE: u8 = 4;
+    const SCENE: u8 = 5;
 
     match SCENE {
         1 => {
@@ -38,7 +38,18 @@ fn scene(time: f32, point: Vec3) -> f32 {
         }
 
         4 => {
-            // Scene 4: Ocean in a sphere
+            // Scene 4: Sort of a beating heart
+            let d = (time * 3.0).sin().abs().powf(3.0);
+
+            let d = (point.x * d).sin()
+                * (point.y * d).sin()
+                * (point.z * d).sin();
+
+            sdf::sphere(point, 3.0) + d
+        }
+
+        5 => {
+            // Scene 5: Ocean in a sphere
             if point.length() <= 15.0 {
                 let a = sdf::ocean(time, point);
                 let b = sdf::sphere(point, 7.0);
@@ -331,12 +342,12 @@ mod sdf {
                 wave_dir.dot(wave_pos) * wave_freq + time;
 
             let wave_h = (wave.sin() - 1.0).exp();
-            let wave_dh = -wave_h * wave.cos();
+            let wave_dh = wave_h * wave.cos();
 
             h_sum += wave_h * wave_weight;
             h_weight += wave_weight;
 
-            wave_pos +=
+            wave_pos -=
                 0.25 * wave_dh * wave_dir * wave_weight;
 
             wave_freq *= 1.18;
