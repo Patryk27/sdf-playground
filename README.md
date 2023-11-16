@@ -37,6 +37,8 @@ pub fn main_fs(out_color: &mut Vec4) {
 
 ## Usage
 
+Assuming you've got [Rust](https://rustup.rs/) installed:
+
 ```
 $ git clone https://github.com/Patryk27/sdf-playground
 $ cargo run --release
